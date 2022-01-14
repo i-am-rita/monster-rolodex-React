@@ -2,16 +2,6 @@ import React, { useState, useEffect } from 'react'
 import MyModal from './Modal'
 
 export default function Page() {
-  // 1. import required hooks... useState and useEffect
-  // Declare the useState for the data
-  // 2. fetch the data in a function from an Api
-  // 4. Declare the loading state using useState to false
-  // Set the loading state in the fetch function to true
-  // Use .catch for any error
-  // 5. .finally after the loading should return false
-  // if... for loading
-  // map through the data using item to refer to each item in the data
-  // Finally take in the items like props.
   const [data, setData] = useState([], 'Page')
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
@@ -47,13 +37,7 @@ export default function Page() {
     setFiltered(filtered)
   }
 
-  // function filteredArray() {
-  //   let filtered = data.filter(item => {
-  //     return (
-  //       item.name.toLowerCase().includes(search.toLowerCase())
-  //     )
-  //   })
-  // }
+  
   // useCallback(
   //   () => {
   //     callback
@@ -90,9 +74,9 @@ export default function Page() {
             )
           })}
         </div>
+        {filtered.length === 0 && <div className='errorMes'>Does not match any Monster</div>}
       </div>
       <div className="modal">
-        
        { data.length > 0 &&  <MyModal open={openModal} close={setOpenModal} rita={singleMonster} />}
       </div>
 
