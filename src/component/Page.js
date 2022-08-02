@@ -46,7 +46,7 @@ export default function Page() {
   // )
   useEffect(() => {
     filteredArray()
-  }, [search, data])
+  },[search, data])
 
   if (loading) {
     return 'loading'
@@ -77,7 +77,7 @@ export default function Page() {
         {filtered.length === 0 && <div className='errorMes'>Does not match any Monster</div>}
       </div>
       <div className="modal">
-       { data.length > 0 &&  <MyModal open={openModal} close={setOpenModal} rita={singleMonster} />}
+       {data.length > 0 &&  <MyModal open={openModal} close={setOpenModal} rita={singleMonster} />}
       </div>
 
     </>
