@@ -19,6 +19,9 @@ export default function Page() {
       .then((data) => setData(data))
       .catch((err) => console.log("error"))
       .finally(() => setLoading(false));
+      if (loading) {
+        return "loading....";
+      }
   }
 
   // Get the event
@@ -38,9 +41,7 @@ export default function Page() {
     filteredArray();
   }, [search, data]);
 
-  if (loading) {
-    return "loading";
-  }
+
 
   // console.log(data);
   return (
@@ -75,6 +76,7 @@ export default function Page() {
             );
           })}
         </div>
+    
         {filtered.length === 0 && (
           <div className="errorMes">Does not match any Monster</div>
         )}
