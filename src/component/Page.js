@@ -51,7 +51,7 @@ export default function Page() {
       });
       // let filtered = data.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) )
       setFiltered(filtered);
-    };
+    }; 
     filteredArray();
   }, [search, data]);
 
@@ -62,8 +62,8 @@ export default function Page() {
   console.log(data);
   return (
     <>
-      <div>
-        <h1>Monster Rolodex</h1>
+      <div className="head">
+        <h1 className="heading">Monster Rolodex</h1>
         <input
           className="search"
           type="search"
