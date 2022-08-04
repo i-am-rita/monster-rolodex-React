@@ -9,8 +9,6 @@ export default function Page() {
   const [openModal, setOpenModal] = useState(false);
   const [singleMonster, setSingleMonster] = useState(false);
 
-  // set the search state
-  // const [filter, setFilter] = useState([])
   useEffect(() => {
     getData();
   }, []);
@@ -28,21 +26,6 @@ export default function Page() {
     setSearch(event.target.value);
   }
 
-  // // map through the array and check for any item.name that includes search
-  // const filteredArray = useCallback(() => {
-  //   let filtered = data.filter((item) => {
-  //     return item.name.toLowerCase().includes(search.toLowerCase())
-  //   })
-  //   // let filtered = data.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) )
-  //   setFiltered(filtered)
-  // },[data, search])
-
-  // useCallback(
-  //   () => {
-  //     callback
-  //   },
-  //   [input],
-  // )
   useEffect(() => {
     // map through the array and check for any item.name that includes search
     const filteredArray = () => {
@@ -51,7 +34,7 @@ export default function Page() {
       });
       // let filtered = data.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) )
       setFiltered(filtered);
-    }; 
+    };
     filteredArray();
   }, [search, data]);
 
@@ -59,7 +42,7 @@ export default function Page() {
     return "loading";
   }
 
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <div className="head">
